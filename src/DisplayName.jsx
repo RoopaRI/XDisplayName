@@ -47,7 +47,7 @@ export default function DisplayName() {
         <button type="submit">Submit</button>
       </form>
       <h3>
-        {(flag) ? "Full Name: "+{fullName} : ""}
+        {(flag) ? "Full Name: "+fullName : ""}
       </h3>
     </div>
   );
