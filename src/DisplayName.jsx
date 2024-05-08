@@ -16,8 +16,10 @@ export default function DisplayName() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    setFullName(`${firstName} ${lastName}`);
-    setFlag(true);
+    if (firstName && lastName) {
+        setFullName(`${firstName} ${lastName}`);
+        setFlag(true);
+      }
   };
 
   return (
@@ -46,9 +48,9 @@ export default function DisplayName() {
         </h3>
         <button type="submit">Submit</button>
       </form>
-      <h3>
-        {(flag) ? "Full Name: "+fullName : ""}
-      </h3>
+      
+      {flag && <h3>Full Name: {fullName}</h3>}
+      
     </div>
   );
 }
