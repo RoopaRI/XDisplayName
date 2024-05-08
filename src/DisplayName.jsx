@@ -4,6 +4,7 @@ export default function DisplayName() {
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [fullName, setFullName] = useState("");
+  const [flag, setFlag] = useState(false);
 
   const handleFirstName = (event) => {
     setFirstName(event.target.value);
@@ -16,6 +17,7 @@ export default function DisplayName() {
   const handleSubmit = (e) => {
     e.preventDefault();
     setFullName(`${firstName} ${lastName}`);
+    setFlag(true);
   };
 
   return (
@@ -44,7 +46,9 @@ export default function DisplayName() {
         </h3>
         <button type="submit">Submit</button>
       </form>
-      <h3>Full Name: {fullName}</h3>
+      <h3>
+        {(flag) ? "Full Name: "+{fullName} : ""}
+      </h3>
     </div>
   );
 }
